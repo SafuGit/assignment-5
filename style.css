@@ -1,5 +1,9 @@
+html {
+  background-color: #F4F7FF !important;
+}
+
 .nav {
-  width: 80vw;
+  width: 85vw;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
@@ -33,4 +37,13 @@
 
 #nav-tick-span {
   line-height: 24px !important;
+}
+
+#main-container {
+  width: 85vw;
+  /* margin: 0 auto; */
+}
+
+.activity {
+  width: 45vw;
 }
