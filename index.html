@@ -36,7 +36,23 @@
   <main>
     <div class="flex mt-4 mx-auto" id="main-container">
       <div id="main-content" class="bg-white mr-6 rounded-lg">
-        <div class="main-head"></div>
+        <div class="main-head">
+          <!-- *TODO FIX THIS AND USE FLEX -->
+          <div class="card bg-[#F4F7FF] mb-4 w-[25%] ml-4 mt-4">
+            <div class="card-body flex-row">
+              <div class="flex gap-4 items-center">
+                <div class="img p-3 bg-base-100 rounded-full">
+                  <img class="w-5 h-5" src="./assets/checkbox.png" alt="">
+                </div>
+                <div>
+                  <h4 class="text-sm">Task Assigned</h4>
+                  <span class="font-bold">3</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border border-dashed min-w-full"></div>
+        </div>
         <div class="task-cards grid grid-cols-3 gap-4 p-5">
           <div class="card bg-[#F4F7FF] shadow-xl">
             <div class="card-body p-5">
