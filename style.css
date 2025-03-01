@@ -10,6 +10,12 @@ html {
   margin-top: 24px;
 }
 
+#questions-accordion {
+  width: 85vw;
+  margin: 0 auto;
+  margin-top: 24px;
+}
+
 #nav-logo-img {
   height: 50%;
   margin-right: 8px;

@@ -14,6 +14,10 @@ document.querySelectorAll(".complete-btn").forEach(button => {
 })
 document.querySelector(".nav-color-img").addEventListener('click', changeBg);
 document.querySelector("#clear-btn").addEventListener('click', clearHistory);
+document.querySelector("#blog-card").addEventListener('click', (event) => {
+    console.log("working");
+    window.location.href = './blog.html'
+})
 
 // *Functions
 function initDate() {
