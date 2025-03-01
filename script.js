@@ -13,6 +13,7 @@ document.querySelectorAll(".complete-btn").forEach(button => {
     button.addEventListener('click', (event) => completeTask(event.target.closest(".card-body")))
 })
 document.querySelector(".nav-color-img").addEventListener('click', changeBg);
+document.querySelector("#clear-btn").addEventListener('click', clearHistory);
 
 // *Functions
 function initDate() {
@@ -35,6 +36,7 @@ function initDate() {
     dateYearElem.innerHTML = `${dateInfo.year}`
 }
 
+// *TODO Add + - to various stats
 function completeTask(cardBody) {
     console.log("test2");
     console.log(cardBody);
@@ -46,9 +48,13 @@ function completeTask(cardBody) {
     const node = document.createTextNode(`You have Completed The Task ${title} at ${dateInfo.time}`);
 
     div.appendChild(node);
-    document.querySelector(".activity").appendChild(div);
+    document.querySelector("#completed-tasks-container").appendChild(div);
 
     cardBody.querySelector(".complete-btn").classList.add("btn-disabled")
+}
+
+function clearHistory() {
+    document.querySelector("#completed-tasks-container").innerHTML = "";
 }
 
 function changeBg() {
