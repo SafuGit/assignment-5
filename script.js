@@ -10,7 +10,7 @@ function main() {
 // *Event Listeners
 console.log(document.querySelector(".complete-btn"))
 document.querySelectorAll(".complete-btn").forEach(button => {
-    button.addEventListener('click', completeTask)
+    button.addEventListener('click', (event) => completeTask(event.target.closest(".card-body")))
 })
 document.querySelector(".nav-color-img").addEventListener('click', changeBg);
 
@@ -25,7 +25,8 @@ function initDate() {
         "month": months[dateObj.getMonth()],
         "day": days[dateObj.getDay()],
         "date": dateObj.getDate(),
-        "year": dateObj.getFullYear()
+        "year": dateObj.getFullYear(),
+        "time": `${dateObj.getHours()}:${dateObj.getMinutes()}:${dateObj.getSeconds()}`
     }
 
     var dateElem = document.querySelector("#date");
@@ -34,8 +35,20 @@ function initDate() {
     dateYearElem.innerHTML = `${dateInfo.year}`
 }
 
-function completeTask() {
+function completeTask(cardBody) {
     console.log("test2");
+    console.log(cardBody);
+    const title = cardBody.querySelector(".card-title").innerText;
+    console.log(title);
+
+    const div = document.createElement("div");
+    div.classList.add("text-sm", "bg-[#F4F7FF]", "ml-4", "mr-4", "mt-4", "p-3", "rounded-md")
+    const node = document.createTextNode(`You have Completed The Task ${title} at ${dateInfo.time}`);
+
+    div.appendChild(node);
+    document.querySelector(".activity").appendChild(div);
+
+    cardBody.querySelector(".complete-btn").classList.add("btn-disabled")
 }
 
 function changeBg() {
