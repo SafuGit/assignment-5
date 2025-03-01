@@ -1,10 +1,17 @@
 console.log("test");
+let dateInfo;
 main();
 
 // *Main Function
 function main() {
     initDate();
 }
+
+// *Event Listeners
+console.log(document.querySelector(".complete-btn"))
+document.querySelectorAll(".complete-btn").forEach(button => {
+    button.addEventListener('click', completeTask)
+})
 
 // *Functions
 function initDate() {
@@ -13,7 +20,7 @@ function initDate() {
 
     var dateObj = new Date();
 
-    const dateInfo = {
+    dateInfo = {
         "month": months[dateObj.getMonth()],
         "day": days[dateObj.getDay()],
         "date": dateObj.getDate(),
@@ -24,4 +31,9 @@ function initDate() {
     var dateYearElem = document.querySelector("#date-year");
     dateElem.innerHTML = `${dateInfo.day} ${dateInfo.month} ${dateInfo.date}`
     dateYearElem.innerHTML = `${dateInfo.year}`
+}
+
+function completeTask() {
+    console.log("test2");
+    console.log(dateInfo);
 }
