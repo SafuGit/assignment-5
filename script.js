@@ -36,7 +36,6 @@ function initDate() {
     dateYearElem.innerHTML = `${dateInfo.year}`
 }
 
-// *TODO Add + - to various stats
 function completeTask(cardBody) {
     console.log("test2");
     console.log(cardBody);
