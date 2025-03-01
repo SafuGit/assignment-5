@@ -12,6 +12,7 @@ console.log(document.querySelector(".complete-btn"))
 document.querySelectorAll(".complete-btn").forEach(button => {
     button.addEventListener('click', completeTask)
 })
+document.querySelector(".nav-color-img").addEventListener('click', changeBg);
 
 // *Functions
 function initDate() {
@@ -35,5 +36,10 @@ function initDate() {
 
 function completeTask() {
     console.log("test2");
-    console.log(dateInfo);
+}
+
+function changeBg() {
+    color = "hsl(" + Math.random() * 360 + ", 100%, 75%)";
+    console.log(color);
+    document.querySelector('html').style.cssText = `background-color: ${color} !important;`
 }
