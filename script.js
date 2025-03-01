@@ -58,6 +58,18 @@ function completeTask(cardBody) {
 
     cardBody.querySelector(".complete-btn").classList.add("btn-disabled")
 
+    let totalcount = 0;
+    let classContains = 0;
+    document.querySelectorAll(".complete-btn").forEach(button => {
+        totalcount += 1
+        if (button.classList.contains("btn-disabled")) {
+            classContains += 1;
+        }
+    })
+    if (classContains == totalcount) {
+        alert("Congrats!! You Have Completed All Tasks!")
+    }
+
     const taskAmountElem = document.querySelector("#task-assigned-amount");
     var taskAmount = taskAmountElem.innerHTML;
     taskAmountElem.innerHTML = taskAmount - 1;
