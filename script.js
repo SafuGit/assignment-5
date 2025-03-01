@@ -72,7 +72,7 @@ function clearHistory() {
 }
 
 function changeBg() {
-    color = "hsl(" + Math.random() * 360 + ", 100%, 75%)";
+    color = "hsl(" + Math.random() * 360 + ", 50%, 75%)";
     console.log(color);
     document.querySelector('html').style.cssText = `background-color: ${color} !important;`
 }
