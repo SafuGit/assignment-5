@@ -45,12 +45,21 @@ function completeTask(cardBody) {
 
     const div = document.createElement("div");
     div.classList.add("text-sm", "bg-[#F4F7FF]", "ml-4", "mr-4", "mt-4", "p-3", "rounded-md")
+    initDate();
     const node = document.createTextNode(`You have Completed The Task ${title} at ${dateInfo.time}`);
 
     div.appendChild(node);
     document.querySelector("#completed-tasks-container").appendChild(div);
 
     cardBody.querySelector(".complete-btn").classList.add("btn-disabled")
+
+    const taskAmountElem = document.querySelector("#task-assigned-amount");
+    var taskAmount = taskAmountElem.innerHTML;
+    taskAmountElem.innerHTML = taskAmount - 1;
+
+    const taskCompletedElem = document.querySelector("#nav-tick-span");
+    const taskCompleteAmount = taskCompletedElem.innerHTML;
+    taskCompletedElem.innerHTML = parseInt(taskCompleteAmount) + 1;
 }
 
 function clearHistory() {
